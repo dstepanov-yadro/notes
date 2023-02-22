@@ -18,23 +18,21 @@
 
     1. Меняем `.env` файл (раскомментить FROSTFS_*_PATH и указать пути):
 
-```yaml
-# FrostFS CLI binary
-FROSTFS_CLI_URL=https://http.t5.fs.neo.org/AQgse8bPCZx4zScMuAKxowJdZPbKHp8NDcp15o6VUNmk/C6BNLpYg5gWLHp3DrXozSxxGLDahBuSBCyJoYSSR1M3Q
-FROSTFS_CLI_PATH=/home/dstepanov/src/frostfs-node/bin/frostfs-cli
+    ```yaml
+    # FrostFS CLI binary
+    FROSTFS_CLI_URL=https://http.t5.fs.neo.org/AQgse8bPCZx4zScMuAKxowJdZPbKHp8NDcp15o6VUNmk/C6BNLpYg5gWLHp3DrXozSxxGLDahBuSBCyJoYSSR1M3Q
+    FROSTFS_CLI_PATH=/home/dstepanov/src/frostfs-node/bin/frostfs-cli
 
-# FrostFS ADM tool binary
-FROSTFS_ADM_VERSION=e3554425
-FROSTFS_ADM_URL=https://http.t5.fs.neo.org/AQgse8bPCZx4zScMuAKxowJdZPbKHp8NDcp15o6VUNmk/sXZxy9vbFyJiLhN9qTSXozXK7SN9H8ZC6dpvAt59Zaj
-FROSTFS_ADM_PATH=/home/dstepanov/src/frostfs-node/bin/frostfs-adm
+    # FrostFS ADM tool binary
+    FROSTFS_ADM_VERSION=e3554425
+    FROSTFS_ADM_URL=https://http.t5.fs.neo.org/AQgse8bPCZx4zScMuAKxowJdZPbKHp8NDcp15o6VUNmk/sXZxy9vbFyJiLhN9qTSXozXK7SN9H8ZC6dpvAt59Zaj
+    FROSTFS_ADM_PATH=/home/dstepanov/src/frostfs-node/bin/frostfs-adm
 
-# Compiled FrostFS Smart Contracts
-FROSTFS_CONTRACTS_VERSION=4f3c08f5
-FROSTFS_CONTRACTS_URL=https://http.t5.fs.neo.org/AQgse8bPCZx4zScMuAKxowJdZPbKHp8NDcp15o6VUNmk/c1nGtturFrSeygYP3AyNHDDLNbs7HhJiH2BQkgZxEmZ
-FROSTFS_CONTRACTS_PATH=/home/dstepanov/src/frostfs-contract
-```
-
-
+    # Compiled FrostFS Smart Contracts
+    FROSTFS_CONTRACTS_VERSION=4f3c08f5
+    FROSTFS_CONTRACTS_URL=https://http.t5.fs.neo.org/AQgse8bPCZx4zScMuAKxowJdZPbKHp8NDcp15o6VUNmk/c1nGtturFrSeygYP3AyNHDDLNbs7HhJiH2BQkgZxEmZ
+    FROSTFS_CONTRACTS_PATH=/home/dstepanov/src/frostfs-contract
+    ```
 
     2. Запускаем `make up`
 
