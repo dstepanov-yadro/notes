@@ -34,6 +34,7 @@ FROSTFS_CONTRACTS_URL=https://http.t5.fs.neo.org/AQgse8bPCZx4zScMuAKxowJdZPbKHp8
 FROSTFS_CONTRACTS_PATH=/home/dstepanov/src/frostfs-contract
 ```
 
+
     2. Запускаем `make up`
 
 # Подебажиться (vs code)
@@ -66,6 +67,7 @@ COPY --from=builder /go/bin/dlv /bin/dlv
 CMD ["frostfs-node"]
 ```
 
+
     2. Собираем докер образ: `make image-storage-debug`
 
 2. В форке https://github.com/TrueCloudLab/frostfs-dev-env:
@@ -85,6 +87,7 @@ CMD ["frostfs-node"]
     command: ["dlv", "--listen=:2345", "--headless=true", "--api-version=2", "--accept-multiclient", "exec", "/bin/frostfs-node", "--","--config", "/etc/frostfs/storage/config.yml"]
 ```
 
+
     2. Меняем `.env`:
 
 ```
@@ -92,6 +95,7 @@ CMD ["frostfs-node"]
 NODE_VERSION=<версия образа из пункта 1>
 NODE_IMAGE=truecloudlab/frostfs-storage-debug
 ```
+
 
     3. Разворачиваем окружение: `make up`
 
@@ -115,5 +119,6 @@ NODE_IMAGE=truecloudlab/frostfs-storage-debug
     ]
 }
 ```
+
 
     3.2 Подключаемся: Run and Debug -> выбрать конфигурацию dev env: frostfs-node -> Start debugging
