@@ -18,7 +18,7 @@
 
     1. Меняем `.env` файл (раскомментить FROSTFS_*_PATH и указать пути):
 
-    ```yaml
+    ````yaml
     # FrostFS CLI binary
     FROSTFS_CLI_URL=https://http.t5.fs.neo.org/AQgse8bPCZx4zScMuAKxowJdZPbKHp8NDcp15o6VUNmk/C6BNLpYg5gWLHp3DrXozSxxGLDahBuSBCyJoYSSR1M3Q
     FROSTFS_CLI_PATH=/home/dstepanov/src/frostfs-node/bin/frostfs-cli
@@ -32,7 +32,7 @@
     FROSTFS_CONTRACTS_VERSION=4f3c08f5
     FROSTFS_CONTRACTS_URL=https://http.t5.fs.neo.org/AQgse8bPCZx4zScMuAKxowJdZPbKHp8NDcp15o6VUNmk/c1nGtturFrSeygYP3AyNHDDLNbs7HhJiH2BQkgZxEmZ
     FROSTFS_CONTRACTS_PATH=/home/dstepanov/src/frostfs-contract
-    ```
+    ````
 
     2. Запускаем `make up`
 
