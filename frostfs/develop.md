@@ -18,7 +18,7 @@
 
     1. Меняем `.env` файл (раскомментить FROSTFS_*_PATH и указать пути):
 
-```
+```yaml
 # FrostFS CLI binary
 FROSTFS_CLI_URL=https://http.t5.fs.neo.org/AQgse8bPCZx4zScMuAKxowJdZPbKHp8NDcp15o6VUNmk/C6BNLpYg5gWLHp3DrXozSxxGLDahBuSBCyJoYSSR1M3Q
 FROSTFS_CLI_PATH=/home/dstepanov/src/frostfs-node/bin/frostfs-cli
@@ -35,6 +35,7 @@ FROSTFS_CONTRACTS_PATH=/home/dstepanov/src/frostfs-contract
 ```
 
 
+
     2. Запускаем `make up`
 
 # Подебажиться (vs code)
@@ -43,7 +44,7 @@ FROSTFS_CONTRACTS_PATH=/home/dstepanov/src/frostfs-contract
 
     1. Создаем отдельный dockerfile с именем, например, `.docker/Dockerfile.storage-debug`, в который собираем frostfs-node и dlv. Пример:
 
-```
+```yaml
 FROM golang:1.20 as builder
 ARG BUILD=now
 ARG VERSION=dev
@@ -68,13 +69,14 @@ CMD ["frostfs-node"]
 ```
 
 
+
     2. Собираем докер образ: `make image-storage-debug`
 
 2. В форке https://github.com/TrueCloudLab/frostfs-dev-env:
 
     1. Меняем `services/storage/docker-compose.yml`, в описание сервиса storage01 добавляем/заменяем:
 
-```
+```yaml
     expose:
       - "2345"
     ports:
@@ -88,13 +90,15 @@ CMD ["frostfs-node"]
 ```
 
 
+
     2. Меняем `.env`:
 
-```
+```yaml
 # FrostFS Storage nodes
 NODE_VERSION=<версия образа из пункта 1>
 NODE_IMAGE=truecloudlab/frostfs-storage-debug
 ```
+
 
 
     3. Разворачиваем окружение: `make up`
@@ -103,7 +107,7 @@ NODE_IMAGE=truecloudlab/frostfs-storage-debug
 
     3.1 Создаем/добавляем конфигурацию для удалённого подключения к дебаггеру (файл .vscode/launch.json):
 
-```
+```json
 {
     "version": "0.2.0",
     "configurations": [
@@ -119,6 +123,7 @@ NODE_IMAGE=truecloudlab/frostfs-storage-debug
     ]
 }
 ```
+
 
 
     3.2 Подключаемся: Run and Debug -> выбрать конфигурацию dev env: frostfs-node -> Start debugging
