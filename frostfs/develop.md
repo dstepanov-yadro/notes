@@ -123,3 +123,14 @@ NODE_IMAGE=truecloudlab/frostfs-storage-debug
 
 
     3.2 Подключаемся: Run and Debug -> выбрать конфигурацию dev env: frostfs-node -> Start debugging
+
+
+# Создание контейнеров/объектов
+
+```
+./bin/frostfs-cli container create -r s01.frostfs.devenv:8080 --wallet ./../frostfs-dev-env/wallets/wallet.json --policy "REP 4 IN X CBF 1 SELECT 4 FROM * AS X" --basic-acl public-read-write --await
+
+./bin/frostfs-cli object put -r s01.frostfs.devenv:8080 --wallet ./../neofs-dev-env/wallets/wallet.json --file README.md --cid <id контейнера>
+
+./bin/frostfs-cli object get -r s01.frostfs.devenv:8080 --wallet ./../neofs-dev-env/wallets/wallet.json --cid <id контейнера> --oid <id объекта>
+```
